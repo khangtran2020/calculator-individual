@@ -21,6 +21,9 @@ def division(a,b,c):
     else:
         return round(a/b,c)
 
+def squaring(a):
+    a = float(a)
+    return a**2
 
 class Calculator:
     result = 0
@@ -40,5 +43,10 @@ class Calculator:
     def divide(self, a, b, c):
         self.result = division(b,a,c)
         return division(b,a,c)
+
+    def square(self, a):
+        self.result = squaring(a)
+        return squaring(a)
+
     def __init__(self):
         pass
