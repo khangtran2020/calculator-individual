@@ -34,6 +34,12 @@ def squareRoot(a,b):
     else:
         return round(math.sqrt(a),b)
 
+def lenth(a):
+    if (len(a.split('.')) > 1):
+        return len(a.split('.')[1])
+    else:
+        return 0
+
 class Calculator:
     result = 0
 
@@ -60,6 +66,9 @@ class Calculator:
     def sqrt(self, a, b):
         self.result = squareRoot(a,b)
         return squareRoot(a, b)
+
+    def getLength(self, a):
+        return lenth(a)
 
     def __init__(self):
         pass

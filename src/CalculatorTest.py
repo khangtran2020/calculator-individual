@@ -34,7 +34,7 @@ class MyTestCase(unittest.TestCase):
     def test_division(self):
         test_data = CsvReader("data/Unit Test Division.csv").data
         for row in test_data:
-            lenth = len(row['Result'].split('.')[1])
+            lenth = self.calculator.getLength(row['Result'])
             result = float(row['Result'])
             self.assertEqual(self.calculator.divide(row['Value 1'], row['Value 2'],lenth), result)
             self.assertEqual(self.calculator.result, result)
@@ -46,13 +46,10 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.square(row['Value 1']), result)
             self.assertEqual(self.calculator.result, result)
 
-    def test_square_root(self):
+    def test_sqare_root(self):
         test_data = CsvReader("data/Unit Test Square Root.csv").data
         for row in test_data:
-            if (len(row['Result'].split('.')) > 1):
-                lenth = len(row['Result'].split('.')[1])
-            else:
-                lenth = 0
+            lenth = self.calculator.getLength(row['Result'])
             result = float(row['Result'])
             self.assertEqual(self.calculator.sqrt(row['Value 1'],lenth), result)
             self.assertEqual(self.calculator.result, result)
