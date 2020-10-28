@@ -45,5 +45,17 @@ class MyTestCase(unittest.TestCase):
             result = float(row['Result'])
             self.assertEqual(self.calculator.square(row['Value 1']), result)
             self.assertEqual(self.calculator.result, result)
+
+    def test_division(self):
+        test_data = CsvReader("data/Unit Test Square Root.csv").data
+        for row in test_data:
+            if (len(row['Result'].split('.')) > 1):
+                lenth = len(row['Result'].split('.')[1])
+            else:
+                lenth = 0
+            result = float(row['Result'])
+            self.assertEqual(self.calculator.sqrt(row['Value 1'],lenth), result)
+            self.assertEqual(self.calculator.result, result)
+
 if __name__ == '__main__':
     unittest.main()
