@@ -5,7 +5,7 @@ from pprint import pprint
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.csv_reader = CsvReader('../data/Unit Test Addition.csv')
+        self.csv_reader = CsvReader('data/Unit Test Addition.csv')
 
     def test_return_data_as_objects(self):
         result = self.csv_reader.return_data_as_class('Result')
@@ -14,7 +14,7 @@ class MyTestCase(unittest.TestCase):
 
         for res in result:
             self.assertEqual(res.__name__, test_class.__name__)
-            pprint(vars(result))
+            pprint(vars(res))
 
 if __name__ == '__main__':
     unittest.main()
