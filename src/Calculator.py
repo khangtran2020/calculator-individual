@@ -1,4 +1,4 @@
-import math
+
 
 def addition(a,b):
     a = float(a)
@@ -32,7 +32,7 @@ def squareRoot(a,b):
     if (a<0):
         return None
     else:
-        return round(math.sqrt(a),b)
+        return round(a**(1/2),b)
 
 def lenth(a):
     if (len(a.split('.')) > 1):
